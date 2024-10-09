@@ -1,0 +1,30 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import BaseMeta from '../components/BaseMeta.astro'
+import BaseScripts from '../components/BaseScripts.astro'
+import '../styles/bootstrap.min.css'
+import '../styles/stylezz.css'
+
+const { title } = Astro.props
+const pageTitle = title ?? 'Isabelle Robinson Art'
+---
+
+<!doctype html>
+<html data-bs-theme='light' lang='en'>
+  <head>
+    <BaseMeta />
+    <link href='https://cdn.reflowhq.com/v2/toolkit.min.css' rel='stylesheet' />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header />
+    <!-- <h1>{pageTitle}</h1> -->
+    <slot />
+    <Footer />
+    <BaseScripts />
+    <script
+      src='https://cdn.reflowhq.com/v2/toolkit.min.js'
+      data-reflow-project='229806198'></script>
+  </body>
+</html>

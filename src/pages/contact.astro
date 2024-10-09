@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/SmartFormsLayout.astro'
+const pageTitle = 'Isabelle Robinson Cancel Order Page'
+---
+
+<BaseLayout title={pageTitle}>
+  <section class='position-relative py-4 py-xl-5'>
+    <div class='container position-relative'>
+      <div class='row mb-5'>
+        <div class='col-md-8 col-xl-6 text-center mx-auto'>
+          <h2>Contact Me</h2>
+          <p class='w-lg-50'>Any Questions ? Feel free to contact me.</p>
+        </div>
+      </div>
+      <div class='row d-flex justify-content-center'>
+        <div class='col-md-6 col-lg-4 col-xl-4'>
+          <div
+            class='d-flex flex-column justify-content-center align-items-center align-items-xl-center h-100'
+          >
+            <div>
+              <img
+                class='rounded-circle img-fluid'
+                id='contactimage'
+                src='/img/isa_r_color.jpg'
+                width='200'
+              />
+            </div>
+          </div>
+        </div>
+        <div class='col-md-6 col-lg-5 col-xl-4'>
+          <div>
+            <form
+              class='p-3 p-xl-4'
+              data-bss-recipient='a7da9d561940c23478c75f180a4fa06b'
+            >
+              <div class='mb-3'>
+                <input
+                  class='form-control'
+                  type='text'
+                  id='name-1'
+                  name='name'
+                  placeholder='Name'
+                />
+              </div>
+              <div class='mb-3'>
+                <input
+                  class='form-control'
+                  type='email'
+                  id='email-1'
+                  name='email'
+                  placeholder='Email'
+                />
+              </div>
+              <div class='mb-3'>
+                <textarea
+                  class='form-control'
+                  id='message-1'
+                  name='message'
+                  rows='10'
+                  placeholder='Message'></textarea>
+              </div>
+              <div>
+                <button class='btn btn-info d-block w-100' type='submit'
+                  >Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,175 @@
+.bs-icon {
+  --bs-icon-size: .75rem;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--bs-icon-size);
+  width: calc(var(--bs-icon-size) * 2);
+  height: calc(var(--bs-icon-size) * 2);
+  color: var(--bs-primary);
+}
+
+.bs-icon-md {
+  --bs-icon-size: 1.5rem;
+}
+
+.bs-icon.bs-icon-primary {
+  color: var(--bs-white);
+  background: var(--bs-primary);
+}
+
+.bs-icon.bs-icon-rounded {
+  border-radius: .5rem;
+}
+
+#topoutnav {
+  /*background-color: var(--bs-info);*/
+  background-color: var(--navt);
+}
+
+.navbar-nav {
+  text-transform: uppercase;
+}
+
+body {
+  font-family: 'Lato';
+}
+
+#mainpic {
+  margin-top: 2.5rem;
+}
+
+#text {
+  margin-top: 2rem;
+}
+
+#introtext {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  /*color: var(--bs-red);*/
+}
+
+#text {
+  color: #2B353F;
+}
+
+#intro2text {
+  font-style: italic;
+}
+
+#intro2text {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mainpage-text {
+  color: rgba(43, 53, 63, .8);
+}
+
+@media (min-width: 576px) {
+  #introtext {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 576px) {
+  #intro2text {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+#gallerylink {
+  margin-bottom: 2rem;
+}
+
+#ft {
+  color: rgba(43,53,63,0.8);
+}
+
+#ft {
+  padding: .5rem .7rem;
+}
+
+#footer-top {
+  background-color: var(--navt);
+}
+
+html {
+  --navt: #B6CED0;
+}
+
+.topfooter2nd {
+  padding-left: .5rem;
+}
+
+#topfooterlinks a {
+  color: #2b353f;
+}
+
+#ft {
+  padding-top: 1rem;
+}
+
+#footer-bottom {
+  color: var(--bs-gray-100);
+  background-color: var(--bs-gray-700);
+}
+
+#homelink {
+  font-size: 2.3rem;
+  font-family: 'Dancing Script';
+}
+
+#hero-image {
+  border-image: stretch;
+  /*background-clip: border-box;*/
+}
+
+#hero-image {
+  object-fit: cover;
+  width: 100%;
+}
+
+#divz img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20rem;
+}
+
+#divz img {
+  border: 1px solid var(--bs-blue);
+  object-fit: cover;
+  max-width: 600px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ref-button {
+  background-color: var(--bs-info);
+  font-size: 1.5rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-name, .ref-excerpt {
+  text-align: center;
+}
+
+#footer-bottom a {
+  color: var(--bs-gray-200);
+}
+
+main {
+}
+

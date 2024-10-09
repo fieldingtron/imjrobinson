@@ -1,16 +1,26 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro'
+const pageTitle = 'Isabelle Robinson Art Projects'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={pageTitle}>
+  <main>
+    <section id='mainpic'>
+      <div class='container mainpage-text'>
+        <img
+          class='rounded img-fluid'
+          id='hero-image'
+          src='/img/broken-separated=united.jpg'
+        />
+        <h1 class='text-center mainpage-text' id='introtext'>
+          Broken&nbsp; -&nbsp; Separated - united
+        </h1>
+        <h5 class='text-capitalize text-center' id='intro2text'>
+          When the broken becomes whole<br />
+        </h5><a href='/gallery.html'>
+          <h1 class='text-center' id='gallerylink'>Explore Our Galleries</h1>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
