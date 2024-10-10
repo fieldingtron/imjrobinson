@@ -1,6 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 const pageTitle = 'Isabelle Robinson Bio'
+
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import { client } from '../../tina/__generated__/client'
+
+const myPost = await client.queries.post({ relativePath: 'about.md' })
+//console.log(myPost.data.post.body)
 ---
 
 <BaseLayout title={pageTitle}>
@@ -20,63 +26,8 @@ const pageTitle = 'Isabelle Robinson Bio'
             width='250'
           />
         </div>
-        <div class='col d-xxl-flex align-items-xxl-center'>
-          <p class='fs-5 pt-3'>
-            Isabelle studied at the School of the Louvre, and the Institute of
-            Art and Archeology at the Sorbonne in Paris, France.<br /><br
-            /><span style='color: rgb(0, 0, 0); background-color: transparent;'
-              >Isabelle was Coordinator for
-            </span>
-            <a href='https://contemplativeoutreachnova.com/' target='_blank'
-              ><span
-                style='color: rgb(0, 0, 0); background-color: transparent;'
-              >
-              </span></a
-            ><a href='https://contemplativeoutreachnova.com/' target='_blank'
-              ><span
-                style='text-decoration: underline; color: rgb(17, 85, 204); background-color: transparent;'
-              >
-                Contemplative Outreach of Northern Virginia</span
-              > &nbsp;</a
-            ><span style='color: rgb(0, 0, 0); background-color: transparent;'>
-              for 9 years helping&nbsp; with logistics for contemplative
-              retreats in the area, served for 4 years as Communications
-              Coordinator for</span
-            ><a href='https://www.contemplativeoutreach.org/' target='_blank'
-              ><span
-                style='color: rgb(0, 0, 0); background-color: transparent;'
-              >
-              </span></a
-            ><a href='https://www.contemplativeoutreach.org/' target='_blank'
-              ><span
-                style='text-decoration: underline; color: rgb(17, 85, 204); background-color: transparent;'
-              >
-                Contemplative Outreach</span
-              > &nbsp;</a
-            ><span style='color: rgb(0, 0, 0); background-color: transparent;'>
-              National and Communications Manager for
-            </span><a href='https://christogenesis.org/' target='_blank'
-              ><span
-                style='text-decoration: underline; color: rgb(17, 85, 204); background-color: transparent;'
-              >
-                The Center for Christogenesis.</span
-              ></a
-            ><br /><br /><span style='color: rgb(34, 34, 34);'
-              >To create her assemblages Isabelle gathers broken objects found
-              randomly on empty streets, sunny beaches or in the depths of the
-              woods, combining them to create new "wholes." By doing so she
-              breaks the boundaries of each object's function and gives them a
-              new identity through their connections to others.</span
-            ><br /><br /><span style='color: rgb(34, 34, 34);'
-              >In some ways those new creations are transplants. A foreign
-              element is introduced to mend a broken piece. That foreign agent
-              is itself also broken, and the mend happens when both find each
-              other and connect through their wounds.</span
-            ><br /><br /><span style='color: rgb(34, 34, 34);'
-              >Isabelle 's paintings are emotional landscapes which shift with
-              time and place</span
-            ><br /><br /><br />
-          </p>
+        <div class='col d-xxl-flex align-items-xxl-center fs-5'>
+          <TinaMarkdown content={myPost.data.post.body} />
         </div>
       </div>
     </div>

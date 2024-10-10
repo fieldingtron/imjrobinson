@@ -173,3 +173,10 @@ body {
 main {
 }
 
+.shows img {
+  max-width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Makes the image a block element */
+  margin-left: auto;
+  margin-right: auto; /* Centers the image horizontally */
+}
