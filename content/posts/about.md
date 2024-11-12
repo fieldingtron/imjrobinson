@@ -10,4 +10,4 @@ To create her assemblages Isabelle gathers broken objects found randomly on empt
 
 In some ways those new creations are transplants. A foreign element is introduced to mend a broken piece. That foreign agent is itself also broken, and the mend happens when both find each other and connect through their wounds.
 
-Isabelle 's paintings are emotional landscapes which shift with time and place.
+Isabelle 's paintings are emotional landscapes which shift with time and place!
