@@ -1,5 +1,30 @@
 import { defineConfig } from "tinacms";
 
+const galleryImageBlock = {
+  name: "image",
+  label: "Gallery Image",
+  ui: {
+    defaultItem: {
+      src: "/img/placeholder.jpg", // Default placeholder image
+      title: "Default Image Title", // Default title
+    },
+  },
+  fields: [
+    {
+      type: "image",
+      label: "Image Source",
+      name: "src", // Match the schema
+      required: true,
+    },
+    {
+      type: "string",
+      label: "Image Title",
+      name: "title", // Match the schema
+      required: true,
+    },
+  ],
+};
+
 
 const headingBlock = {
   name: "Heading",
@@ -103,6 +128,32 @@ export default defineConfig({
             label: "Shows Section",
             templates: [imageBlock, contentBlock, headingBlock],
           }
+        ],
+      },
+      {
+        name: "photos",
+        label: "Photo Gallery",
+        path: "src/content/photos",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Gallery Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "object",
+            list: true,
+            name: "images",
+            label: "Gallery Images",
+            ui: {
+              itemProps: (item) => ({
+                label: item?.title || "New Image",
+              }),
+            },
+            fields: galleryImageBlock.fields,
+          },
         ],
       },
     ],

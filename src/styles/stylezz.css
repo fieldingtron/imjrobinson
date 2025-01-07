@@ -180,3 +180,15 @@ main {
   margin-left: auto;
   margin-right: auto; /* Centers the image horizontally */
 }
+
+
+.image-container {
+  min-width: 300px;
+  max-width: 100%; /* Ensure it remains responsive */
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

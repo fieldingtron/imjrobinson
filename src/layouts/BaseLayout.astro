@@ -5,6 +5,7 @@ import BaseMeta from '../components/BaseMeta.astro'
 import BaseScripts from '../components/BaseScripts.astro'
 import '../styles/bootstrap.min.css'
 import '../styles/stylezz.css'
+// import 'lightbox2/dist/css/lightbox.min.css' // CSS import
 
 const { title } = Astro.props
 const pageTitle = title ?? 'Isabelle Robinson Art'
@@ -15,8 +16,26 @@ const pageTitle = title ?? 'Isabelle Robinson Art'
   <head>
     <BaseMeta />
     <title>{pageTitle}</title>
+    <!-- GLightbox CSS -->
+    <link
+      href='https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'
+      rel='stylesheet'
+    />
   </head>
   <body>
+    <!-- GLightbox JS -->
+    <script
+      src='https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js'
+      defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const lightbox = GLightbox({
+          selector: '.glightbox',
+          touchNavigation: true,
+          loop: true,
+        })
+      })
+    </script>
     <Header />
     <!-- <h1>{pageTitle}</h1> -->
     <slot />
