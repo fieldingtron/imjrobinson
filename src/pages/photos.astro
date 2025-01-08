@@ -1,40 +1,19 @@
 ---
-import { getEntryBySlug } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-// Import GLightbox styles
-import 'glightbox/dist/css/glightbox.min.css';
-
-const photos = await getEntryBySlug('photos', 'photos');
-const {
-  data: { title, images },
-} = photos;
+import BaseLayout from '../layouts/ToolkitLayout.astro'
+const pageTitle = 'Isabelle Robinson Photos'
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={pageTitle}>
   <main>
-    <div class="container py-4">
-      <h1 class="text-center mb-4">{title}</h1>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {images.map((image) => (
-          <div class="col d-flex justify-content-center align-items-center">
-            <div class="card border-0 shadow-sm">
-              <a href={image.src} class="glightbox" data-title={image.title}>
-                <!-- Ensure minimum width for images -->
-                <div class="ratio ratio-16x9 image-container">
-                  <img
-                    src={image.src}
-                    class="card-img-top img-fluid object-fit-cover"
-                    alt={image.title}
-                  />
-                </div>
-              </a>
-              <div class="card-body">
-                <h5 class="card-title text-center">{image.title}</h5>
-              </div>
-            </div>
-          </div>
-        ))}
+    <div class='container mt-3'>
+      <div
+        data-reflow-type='product-list'
+        data-reflow-layout='cards'
+        data-reflow-order='custom_desc'
+        data-reflow-product-link='/product/index.html?product={id}'
+        data-reflow-category='223153814'
+        data-reflow-show='image,name,excerpt,pagination,add-to-cart'
+      >
       </div>
     </div>
   </main>
