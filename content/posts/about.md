@@ -4,7 +4,7 @@ title: Isabelle Robinson Bio
 
 Isabelle studied at the School of the Louvre, and the Institute of Art and Archeology at the Sorbonne in Paris, France.
 
-She was Coordinator for [](https://contemplativeoutreachnova.com/)[Contemplative Outreach of Northern Virginia](https://contemplativeoutreachnova.com/)  helping  with logistics for contemplative retreats in the area, served  as Communications Coordinator for[](https://www.contemplativeoutreach.org/) [Contemplative Outreach](https://www.contemplativeoutreach.org/)  National and Communications Director for [The Center for Christogenesis.](https://christogenesis.org/)
+She was Coordinator for [](https://contemplativeoutreachnova.com/)[Contemplative Outreach of Northern Virginia](https://contemplativeoutreachnova.com/)  helping  with logistics for contemplative retreats in the area, served  as Communications Coordinator for[](https://www.contemplativeoutreach.org/) [Contemplative Outreach](https://www.contemplativeoutreach.org/)  National and Communications Director for [The Center for Christogenesis.](https://christogenesis.org/) She also owned and run the website findthedivine.com.
 
 To create her assemblages Isabelle gathers random broken objects combining them to create new "wholes." By doing so she breaks the boundaries of each object's function and gives them a new identity through their connections to others.
 
