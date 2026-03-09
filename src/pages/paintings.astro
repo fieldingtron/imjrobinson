@@ -1,11 +1,22 @@
 ---
 import BaseLayout from '../layouts/ToolkitLayout.astro'
-const pageTitle = 'Isabelle Robinson Paintings'
+const pageTitle = 'Paintings | Isabelle Robinson'
+const pageDescription =
+  'Browse paintings by Isabelle Robinson, including expressive abstract landscapes and mixed-media works.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/paintings/'
+  pageType='CollectionPage'
+>
   <main>
     <div class='container mt-3'>
+      <h1 class='text-center mb-3'>Paintings</h1>
+      <p class='lead text-center px-md-5'>
+        View paintings that blend abstraction, texture, and emotional landscape.
+      </p>
       <div
         data-reflow-type='product-list'
         data-reflow-layout='cards'

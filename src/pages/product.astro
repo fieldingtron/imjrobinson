@@ -1,11 +1,19 @@
 ---
 import BaseLayout from '../layouts/ToolkitLayout.astro'
-const pageTitle = 'Isabelle Robinson Product Details'
+const pageTitle = 'Artwork Details | Isabelle Robinson'
+const pageDescription =
+  'Product detail page for individual Isabelle Robinson artworks available through the online shop.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/product/'
+  robots='noindex,nofollow'
+>
   <main>
     <div class='container mt-3'>
+      <h1 class='text-center mb-4'>Artwork Details</h1>
       <div
         data-reflow-type='product'
         data-bss-dynamic-product=''

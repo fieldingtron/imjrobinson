@@ -1,11 +1,22 @@
 ---
 import BaseLayout from '../layouts/ToolkitLayout.astro'
-const pageTitle = 'Isabelle Robinson Assemblages'
+const pageTitle = 'Assemblages | Isabelle Robinson'
+const pageDescription =
+  'Shop assemblages by Isabelle Robinson, featuring found-object compositions centered on restoration, connection, and transformation.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/assemblages/'
+  pageType='CollectionPage'
+>
   <main>
     <div class='container mt-3'>
+      <h1 class='text-center mb-3'>Assemblages</h1>
+      <p class='lead text-center px-md-5'>
+        Explore sculptural assemblages built from reclaimed objects and reimagined fragments.
+      </p>
       <div
         data-reflow-type='product-list'
         data-reflow-layout='cards'

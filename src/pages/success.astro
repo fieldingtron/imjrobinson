@@ -1,9 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = 'Isabelle Robinson Cancel Order Page'
+const pageTitle = 'Order Success | Isabelle Robinson'
+const pageDescription =
+  'Confirmation page for successful artwork orders placed through Isabelle Robinson Art.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/success/'
+  robots='noindex,nofollow'
+>
   <main>
     <div class='container text-center mt-3'>
       <h1 class='fs-1 text-center my-4'>Success!</h1>

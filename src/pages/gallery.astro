@@ -1,37 +1,68 @@
 ---
-import BaseLayout from '../layouts/ToolkitLayout.astro'
-const pageTitle = 'Isabelle Robinson Art Galleries'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const pageTitle = 'Art Galleries | Isabelle Robinson'
+const pageDescription =
+  'Browse Isabelle Robinson gallery collections and enter the assemblages, paintings, and photography sections from one central gallery page.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/gallery/'
+  pageType='CollectionPage'
+>
   <main>
     <div class='container'>
+      <h1 class='text-center pt-4'>Art Galleries</h1>
+      <p class='text-center lead mb-0'>
+        Explore Isabelle Robinson&apos;s assemblages, paintings, and photography collections.
+      </p>
       <div class='row row-cols-1 row-cols-md-3 py-3'>
         <div class='col d-flex justify-content-center align-items-center py-3'>
-          <a href='/assemblages/'>
+          <a href='/assemblages/' aria-label='Browse assemblages gallery'>
             <div>
               <img
                 class='img-fluid'
                 src='/img/assemblages_icon_3.jpg'
+                alt='Assemblages gallery preview'
                 width='400'
+                height='400'
+                loading='lazy'
+                decoding='async'
               />
-              <h1 class='text-center pt-2'>Assemblages</h1>
+              <h2 class='text-center pt-2 h3'>Assemblages</h2>
             </div>
           </a>
         </div>
         <div class='col d-flex justify-content-center align-items-center py-3'>
-          <a href='/paintings/'>
+          <a href='/paintings/' aria-label='Browse paintings gallery'>
             <div>
-              <img class='img-fluid' src='/img/paintings.png' width='400' />
-              <h1 class='text-center pt-2'>Paintings</h1>
+              <img
+                class='img-fluid'
+                src='/img/paintings.png'
+                alt='Paintings gallery preview'
+                width='400'
+                height='396'
+                loading='lazy'
+                decoding='async'
+              />
+              <h2 class='text-center pt-2 h3'>Paintings</h2>
             </div>
           </a>
         </div>
         <div class='col d-flex justify-content-center align-items-center py-3'>
-          <a href='/photos/'>
+          <a href='/photos/' aria-label='Browse photography gallery'>
             <div>
-              <img class='img-fluid' src='/img/fotoz.jpg' width='400' />
-              <h1 class='text-center pt-2'>Photos</h1>
+              <img
+                class='img-fluid'
+                src='/img/fotoz.jpg'
+                alt='Photography gallery preview'
+                width='400'
+                height='400'
+                loading='lazy'
+                decoding='async'
+              />
+              <h2 class='text-center pt-2 h3'>Photos</h2>
             </div>
           </a>
         </div>

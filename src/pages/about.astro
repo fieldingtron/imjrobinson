@@ -1,19 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = 'Isabelle Robinson Bio'
+import AboutContent from '../../content/posts/about.md'
 
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
-import { client } from '../../tina/__generated__/client'
-
-const myPost = await client.queries.post({ relativePath: 'about.md' })
-//console.log(myPost.data.post.body)
+const pageTitle = 'About Isabelle Robinson | Artist Biography'
+const pageDescription =
+  'Read the biography of Isabelle Robinson and learn about the artistic practice behind her assemblages, paintings, and mixed-media work.'
 ---
 
-<BaseLayout title={pageTitle}>
-  <main class='d-lg-flex align-items-lg-center flex-grow-1'>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/about/'
+  pageType='AboutPage'
+  ogImage='/img/isa_r_color.jpg'
+>
+  <main class='py-4'>
     <div
       class='container d-flex justify-content-center align-items-center align-items-xxl-center my-auto mh-100'
     >
+      <div class='w-100'>
+        <h1 class='text-center mb-4'>About Isabelle Robinson</h1>
+      </div>
+    </div>
+    <div class='container'>
       <div
         class='row row-cols-1 row-cols-lg-2 d-flex d-xxl-flex justify-content-center align-items-center align-items-xxl-center py-3'
       >
@@ -23,11 +32,15 @@ const myPost = await client.queries.post({ relativePath: 'about.md' })
           <img
             class='rounded-circle img-fluid'
             src='/img/isa_r_color.jpg'
+            alt='Portrait of artist Isabelle Robinson'
             width='250'
+            height='266'
+            loading='lazy'
+            decoding='async'
           />
         </div>
         <div class='col fs-5'>
-          <TinaMarkdown content={myPost.data.post.body} />
+          <AboutContent />
         </div>
       </div>
     </div>

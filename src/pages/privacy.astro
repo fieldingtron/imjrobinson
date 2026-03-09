@@ -1,9 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = 'Isabelle Robinson Privacy Policy Page'
+const pageTitle = 'Privacy Policy | Isabelle Robinson'
+const pageDescription =
+  'Read the privacy policy for imjrobinson.com and learn how personal information is handled on the site.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/privacy/'
+>
   <main>
     <div class='container text-center mt-3'>
       <h1 class='fs-1 text-center my-4'>Privacy Policy</h1>

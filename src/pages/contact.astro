@@ -1,14 +1,21 @@
 ---
 import BaseLayout from '../layouts/SmartFormsLayout.astro'
-const pageTitle = 'Isabelle Robinson Cancel Order Page'
+const pageTitle = 'Contact Isabelle Robinson'
+const pageDescription =
+  'Get in touch with Isabelle Robinson for artwork inquiries, exhibitions, and general questions.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/contact/'
+  pageType='ContactPage'
+>
   <section class='position-relative py-4 py-xl-5'>
     <div class='container position-relative'>
       <div class='row mb-5'>
         <div class='col-md-8 col-xl-6 text-center mx-auto'>
-          <h2>Contact Me</h2>
+          <h1>Contact Me</h1>
           <p class='w-lg-50'>Any Questions ? Feel free to contact me.</p>
         </div>
       </div>
@@ -22,7 +29,11 @@ const pageTitle = 'Isabelle Robinson Cancel Order Page'
                 class='rounded-circle img-fluid'
                 id='contactimage'
                 src='/img/isa_r_color.jpg'
+                alt='Portrait of Isabelle Robinson'
                 width='200'
+                height='213'
+                loading='lazy'
+                decoding='async'
               />
             </div>
           </div>

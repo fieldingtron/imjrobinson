@@ -1,11 +1,18 @@
 ---
 import BaseLayout from '../layouts/ToolkitLayout.astro'
-const pageTitle = 'Isabelle Robinson Shopping Cart'
+const pageTitle = 'Shopping Cart | Isabelle Robinson'
+const pageDescription = 'Review items in your Isabelle Robinson shopping cart before checkout.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/cart/'
+  robots='noindex,nofollow'
+>
   <main class='my-3'>
     <div class='container'>
+      <h1 class='text-center mb-4'>Shopping Cart</h1>
       <div
         data-reflow-type='shopping-cart'
         data-reflow-success-url='/success/'
@@ -13,5 +20,5 @@ const pageTitle = 'Isabelle Robinson Shopping Cart'
       >
       </div>
     </div>
-  </main></BaseLayout
->
+  </main>
+</BaseLayout>

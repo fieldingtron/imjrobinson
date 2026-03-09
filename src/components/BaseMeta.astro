@@ -1,9 +1,94 @@
+---
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TITLE,
+  INSTAGRAM_URL,
+  SITE_NAME,
+  SITE_URL,
+} from '../consts/site'
+
+type StructuredData = Record<string, unknown>
+
+interface Props {
+  title?: string
+  description?: string
+  canonicalPath?: string
+  robots?: string
+  ogType?: string
+  ogImage?: string
+  structuredData?: StructuredData[]
+  pageType?: string
+}
+
+const {
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  canonicalPath,
+  robots = 'index,follow',
+  ogType = 'website',
+  ogImage = DEFAULT_OG_IMAGE,
+  structuredData = [],
+  pageType = 'WebPage',
+} = Astro.props
+
+const site = Astro.site ?? new URL(SITE_URL)
+const pathname = canonicalPath ?? Astro.url.pathname
+const canonicalUrl = new URL(pathname, site).toString()
+const ogImageUrl = new URL(ogImage, site).toString()
+
+const baseStructuredData: StructuredData[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#artist`,
+    name: 'Isabelle Robinson',
+    url: SITE_URL,
+    image: ogImageUrl,
+    sameAs: [INSTAGRAM_URL],
+    jobTitle: 'Visual Artist',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': pageType,
+    '@id': `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: title,
+    description,
+    isPartOf: {
+      '@id': `${SITE_URL}/#website`,
+    },
+    about: {
+      '@id': `${SITE_URL}/#artist`,
+    },
+  },
+  ...structuredData,
+]
+---
+
 <meta charset='utf-8' />
 <meta
   name='viewport'
   content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
 />
+<meta name='description' content={description} />
+<meta name='robots' content={robots} />
+<meta name='author' content='Isabelle Robinson' />
+<meta name='generator' content={Astro.generator} />
+<meta name='theme-color' content='#f5f0e8' />
 
+<link rel='canonical' href={canonicalUrl} />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+<link rel='preconnect' href='https://fonts.googleapis.com' />
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='anonymous' />
 <link
   rel='stylesheet'
   href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap'
@@ -13,4 +98,20 @@
   href='https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap'
 />
 
-<meta name='generator' content={Astro.generator} />
+<meta property='og:site_name' content={SITE_NAME} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:type' content={ogType} />
+<meta property='og:url' content={canonicalUrl} />
+<meta property='og:image' content={ogImageUrl} />
+
+<meta name='twitter:card' content='summary_large_image' />
+<meta name='twitter:title' content={title} />
+<meta name='twitter:description' content={description} />
+<meta name='twitter:image' content={ogImageUrl} />
+
+{
+  baseStructuredData.map((schema) => (
+    <script type='application/ld+json' set:html={JSON.stringify(schema)} />
+  ))
+}

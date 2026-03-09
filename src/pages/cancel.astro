@@ -1,15 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = 'Isabelle Robinson Cancel Order Page'
+const pageTitle = 'Payment Unsuccessful | Isabelle Robinson'
+const pageDescription =
+  'Information page for unsuccessful checkout attempts on Isabelle Robinson Art.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/cancel/'
+  robots='noindex,nofollow'
+>
   <main>
     <div class='container text-center mt-3'>
       <h1 class='fs-1 text-center my-4'>Payment Unsuccessful</h1>
       <p class='lead text-start px-md-5'>
         There was a problem with your order.&nbsp; Please review your payment
-        information. Also free me to &nbsp;<a href='#'>contact me directly.</a>
+        information. Also feel free to&nbsp;<a href='/contact/'>contact me directly.</a>
       </p>
     </div>
   </main>

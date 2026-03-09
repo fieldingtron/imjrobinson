@@ -1,11 +1,22 @@
 ---
 import BaseLayout from '../layouts/ToolkitLayout.astro'
-const pageTitle = 'Isabelle Robinson Photos'
+const pageTitle = 'Photography | Isabelle Robinson'
+const pageDescription =
+  'Browse photography by Isabelle Robinson, including fine art photo works available through the online gallery.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/photos/'
+  pageType='CollectionPage'
+>
   <main>
     <div class='container mt-3'>
+      <h1 class='text-center mb-3'>Photography</h1>
+      <p class='lead text-center px-md-5'>
+        Explore photographic works that extend Isabelle Robinson&apos;s visual language beyond assemblage and paint.
+      </p>
       <div
         data-reflow-type='product-list'
         data-reflow-layout='cards'

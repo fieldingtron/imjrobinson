@@ -1,9 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = 'Isabelle Robinson Terms of Use'
+const pageTitle = 'Terms of Use | Isabelle Robinson'
+const pageDescription =
+  'Review the terms of use for visiting and using the Isabelle Robinson website.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/terms/'
+>
   <main>
     <div class='container text-center mt-3'>
       <h1 class='fs-1 text-center my-4'>Terms of Use</h1>

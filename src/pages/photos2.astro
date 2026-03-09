@@ -9,9 +9,17 @@ const photos = await getEntryBySlug('photos', 'photos');
 const {
   data: { title, images },
 } = photos;
+const pageDescription =
+  'Alternate photo gallery view for Isabelle Robinson artworks and reference imagery.'
 ---
 
-<BaseLayout title={title}>
+<BaseLayout
+  title={`${title} | Isabelle Robinson`}
+  description={pageDescription}
+  canonicalPath='/photos2/'
+  robots='noindex,nofollow'
+  pageType='CollectionPage'
+>
   <main>
     <div class="container py-4">
       <h1 class="text-center mb-4">{title}</h1>

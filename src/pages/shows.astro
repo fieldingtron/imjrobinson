@@ -1,31 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const pageTitle = 'Isabelle Robinson Shows and Events'
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
-import { client } from '../../tina/__generated__/client'
+import ArticlesContent from '../../content/posts/articles.md'
+import ShowsContent from '../../content/posts/shows.md'
 
-// const myPost = await client.queries.post({ relativePath: 'hello-world.md' })
-// console.log(myPost.data.post.title)
-
-const articles = await client.queries.post({ relativePath: 'articles.md' })
-// console.log(myPost.data.post.body)
-
-const shows = await client.queries.post({ relativePath: 'shows.md' })
-// console.log(myPost.data.post.body)
+const pageTitle = 'Shows and Articles | Isabelle Robinson'
+const pageDescription =
+  'See exhibitions, awards, and published articles featuring the work of Isabelle Robinson.'
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath='/shows/'
+>
   <main>
     <div class='container mt-3'>
-      <h1 class='fs-1 text-center my-2'>Art Shows</h1>
+      <h1 class='fs-1 text-center my-2'>Shows and Articles</h1>
+      <h2 class='fs-2 text-center my-2'>Art Shows</h2>
 
       <div class='lead text-start px-md-5 fs-5 mt-3 shows'>
-        <TinaMarkdown content={shows.data.post.body} />
+        <ShowsContent />
       </div>
 
-      <h1 class='fs-1 text-center my-2'>Articles</h1>
+      <h2 class='fs-2 text-center my-2'>Articles</h2>
       <div class='lead text-start px-md-5 fs-5'>
-        <TinaMarkdown content={articles.data.post.body} />
+        <ArticlesContent />
       </div>
     </div>
   </main>
