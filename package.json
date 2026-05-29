@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "npm@11.6.2",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
     "start": "tinacms build && astro dev",
