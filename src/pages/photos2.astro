@@ -1,11 +1,11 @@
 ---
-import { getEntryBySlug } from 'astro:content';
+import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Import GLightbox styles
 // import 'glightbox/dist/css/glightbox.min.css';
 
-const photos = await getEntryBySlug('photos', 'photos');
+const photos = await getEntry('photos', 'photos');
 const {
   data: { title, images },
 } = photos;

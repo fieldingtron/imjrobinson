@@ -2,27 +2,36 @@ const crypto = require('node:crypto')
 const fs = require('node:fs')
 const readline = require('node:readline')
 
-// Check if running in production based on // Check if running in production based on CONTEXT or VERCEL_ENV
-if (
+// Skip if running in production or CI environments where prompt isn't feasible
+const isProduction =
+  process.env.NODE_ENV?.toLowerCase() === 'production' ||
   process.env.VERCEL_ENV?.toLowerCase() === 'production' ||
   process.env.CONTEXT?.toLowerCase() === 'production'
-) {
+
+const isCI = !!process.env.CI
+
+if (isProduction || isCI) {
   console.log(
-    'Production environment detected. Skipping encryption/decryption.'
+    'Production or CI environment detected. Skipping encryption/decryption.'
   )
-  process.exit(0) // Exit the script without running any further
+  process.exit(0)
 }
 
-// Continue with the rest of your script if not in production
-console.log(
-  'Not in production environment. Proceeding with encryption/decryption.'
-)
+console.log('Not in production/CI environment. Proceeding with encryption/decryption checks.')
 
-console.log('process.env')
-console.log(process.env)
+// Helper function to get password from env or prompt
+async function getPassword(question) {
+  if (process.env.PASSWORD) {
+    console.log('Using password from PASSWORD environment variable.')
+    return process.env.PASSWORD
+  }
 
-// Helper function to prompt for a password
-function promptPassword(question) {
+  // If stdin is not a TTY, we cannot prompt for a password
+  if (!process.stdin.isTTY) {
+    console.log('Non-interactive environment and PASSWORD environment variable not set. Skipping.')
+    process.exit(0)
+  }
+
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -74,16 +83,12 @@ async function decryptFile(password) {
   const envEncExists = fs.existsSync('.env.enc')
 
   if (envExists && !envEncExists) {
-    // If .env exists but .env.enc does not, encrypt .env
     console.log('.env exists but .env.enc does not. Encrypting .env...')
-    const password = await promptPassword('Enter password to encrypt .env: ')
+    const password = await getPassword('Enter password to encrypt .env: ')
     await encryptFile(password)
   } else if (envEncExists && !envExists) {
-    // If .env.enc exists but .env does not, decrypt .env.enc
     console.log('.env.enc exists but .env does not. Decrypting .env.enc...')
-    const password = await promptPassword(
-      'Enter password to decrypt .env.enc: '
-    )
+    const password = await getPassword('Enter password to decrypt .env.enc: ')
     try {
       await decryptFile(password)
     } catch (error) {
